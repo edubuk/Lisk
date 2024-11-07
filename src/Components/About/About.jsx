@@ -20,7 +20,8 @@ const About = () => {
       about:"10+ years of Experience in the Education Industry as Professor, UGC NET Qualified University Topper, Top 30 young Indian in Education, National VP, Emerging Technologies Wing, WICCI Finalists: Women in AI APAC- 2024 award, Dean, European Digital University.",
       linkedInLink:"https://www.linkedin.com/in/shivani-mehrotra-edubuk/",
       teligramLink:"https://web.telegram.org/k/#@shivaanimehrotrabajaj",
-      mailId:"apoorva@edubukeseal.org"
+      mailId:"shivani@edubukeseal.org"
+
     },
     {
       id:2,
@@ -30,7 +31,7 @@ const About = () => {
       about:"10+ years Exp. in Finance + Technology IIT, IIM, Gold-Medalist, ex-Goldman Sachs, DE Shaw, JP Morgan, Quant Hedge Funds, Trained in AI, Blockchain & Data Analytics by Google, IBM, Microsoft Experts Global Trainer in Gen AI, AI, ML, Blockchain & Emerging Technologies.",
       linkedInLink:"https://www.linkedin.com/in/apoorva-bajaj-iit-iim-cfa-edubuk/",
       teligramLink:"https://web.telegram.org/k/#@apoorvabajajcfa",
-      mailId:"shivani@edubukeseal.org"
+      mailId:"apoorva@edubukeseal.org"
     },
 
     {
