@@ -5,6 +5,7 @@ import { EdubukContexts } from './../../Context/EdubukContext';
 import AddWitness from './AddWitness';
 import NotAuthorized from '../Error/NotAuthorized';
 import SmallLoader from '../SmallLoader/SmallLoader';
+import toast from 'react-hot-toast';
 
 const Institute = () => {
     const [openPage, setOpenPage] = useState(true);
@@ -19,6 +20,10 @@ const Institute = () => {
     const verifyInst = async()=>{
       try {
         setLoading(true);
+        if(!account)
+        {
+          return toast.error("Please connect wallet");
+        }
         const contract = await connectingWithContract();
         //console.log("contract", contract);
         const instDetails = await contract.verifyInstitute();

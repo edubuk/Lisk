@@ -197,7 +197,7 @@ const PostCert = () => {
           )}
           {uri && (
             <a
-              href={`https://${process.env.REACT_APP_PINATAGATWAY}/ipfs/${uri}`}
+              href={`${process.env.REACT_APP_BaseURL}/api/v1/getDocByUri/${uri}`}
               target="_blank"
               rel="noreferrer"
             >
