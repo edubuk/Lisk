@@ -64,7 +64,7 @@ const Model = ({ setOpenModal, currUri, isShareBtn }) => {
     try {
     
       setLoading(true)
-      const url = `${baseUrl}/api/v1/shareAccess`;
+      const url = "http://localhost:8080/api/v1/shareAccess";
       const res = await fetch(url, {
         method: "POST",
         body: JSON.stringify({ "email":receiverEmail, "name":receiverName, "userId":userid, "pinataHash":currUri }),

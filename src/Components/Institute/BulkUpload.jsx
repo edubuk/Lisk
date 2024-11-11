@@ -15,10 +15,11 @@ const BulkUpload = () => {
   const [certData, setCertData] = useState([null]);
   const { account, connectingWithContract, loading, setLoading } =
     useContext(EdubukContexts);
-  const [isTransaction, setTransaction] = useState(false);
+  const [txHash, setTxHash] = useState(null);
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
   const [csvfile, setCSVFile] = useState();
+  const [docCount, setDocCount] = useState(null);
 
   // function to handle input file
   const handleFileChange = (e) => {
@@ -64,7 +65,7 @@ const BulkUpload = () => {
         setUri((prevUri) => [...prevUri, upload?.IpfsHash]);
         setCount((prevCount) => prevCount + 1);
       }
-      console.log(upload);
+      //console.log(upload);
     } catch (error) {
       setUploadLoader(false);
       toast.error("Error in uploading file");
@@ -82,6 +83,7 @@ const BulkUpload = () => {
 
   // function to extract pdf from zip file in chunks of 10
   const unZipFiles = async (e) => {
+    e.preventDefault();
     if(!csvfile)
     {
       return toast.error("No CSV file choosen")
@@ -139,6 +141,7 @@ const BulkUpload = () => {
   const readCSVFile = async (e) => {
     e.preventDefault();
     const file = e.target.files?.[0];
+   
     setCSVFile(file);
     if (file) {
       Papa.parse(file, {
@@ -156,31 +159,41 @@ const BulkUpload = () => {
 
   const issueMultipleCert = async (e) => {
     e.preventDefault();
+    if(!issuerName)
+    {
+      return toast.error("Please provide issuer name")
+    }
     if(!account)
       return toast.error("Please connect your wallet")
     if (certData?.length !== uri.length)
       return toast.error("Data count in zip file and csv file mismatch");
+    if(data?.length===0)
+    {
     for (let i = 0; i < uri.length; i++) {
       console.log("file hash :",fileHash[i])
       data.push({
-        studentname: certData[i].studentName,
-        studentAdd: certData[i].studentAdd,
+        studentname: certData[i].studentName?.trim(),
+        studentAdd: certData[i].studentAdd?.trim(),
         hash: fileHash[i],
-        _type: certData[i].certType,
+        _type: certData[i].certType?.trim(),
         URI: uri[i],
         _witness: account,
       });
     }
-    console.log("pushing data",data);
+  }
+    //console.log("pushing data",data);
     try {
       setLoading(true);
       const contract = await connectingWithContract();
       // console.log("contract", contract);
-      const registerBulkCert = await contract.bulkUpload(data, issuerName);
-      await registerBulkCert.wait();
-      setLoading(false);
-      toast.success("Certificated Posted successfully");
-      setTransaction(true);
+      const tx = await contract.bulkUpload(data, issuerName);
+      await tx.wait();
+      if(tx?.hash)
+      {
+        setTxHash(tx.hash);
+        setLoading(false);
+        toast.success("Certificated Posted successfully");
+      }
       setIssuerName("");
       setCount(0);
     } catch (error) {
@@ -233,7 +246,7 @@ const BulkUpload = () => {
             </>
           ) : (
             <h4>
-              Uploaded File... <span>{count}</span>
+              Uploaded File... <span>{count}/<strong>{certData?.length}</strong></span>
             </h4>
           )}
           {uploadLoader ? (
@@ -247,11 +260,11 @@ const BulkUpload = () => {
         ) : (
           <div className="multi-btn">
             {" "}
-            <button id="register-btn" onClick={issueMultipleCert}>Register Certificate</button>{" "}
-            {isTransaction && (
+            <button id="register-btn" onClick={issueMultipleCert}>Register Certificates</button>{" "}
+            {txHash && (
               <a
-                href={`https://giant-half-dual-testnet.explorer.testnet.skalenodes.com/address/${account}`}
-                id="solana-explorer"
+                href={`https://xdcscan.com/tx/${txHash}`}
+                id="xdc-explorer"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -12,7 +12,7 @@ const InstRegValue = {
 
 const InsReg = () => {
   const [values, setValues] = useState(InstRegValue);
-  const [isTransaction, setTransaction] = useState(false);
+  const [txHash, setTxHash] = useState(null);
   const { account, connectingWithContract } = useContext(EdubukContexts);
   const [loading, setLoading] = useState(false);
 
@@ -33,15 +33,18 @@ const InsReg = () => {
       setLoading(true);
       const contract = await connectingWithContract();
       console.log("contract", contract);
-      const registerInst = await contract.registerInstitute(
+      const tx = await contract.registerInstitute(
         values.instName,
         values.instAcronym,
         values.witness
       );
-      await registerInst.wait();
-      setLoading(false);
-      toast.success("Institute Register Successfully");
-      setTransaction(true);
+      await tx.wait();
+      if(tx?.hash)
+      {
+        setTxHash(tx.hash)
+        setLoading(false);
+        toast.success("Institute Register Successfully");
+      }
       setValues(InstRegValue);
     } catch (error) {
       setLoading(false);
@@ -92,9 +95,9 @@ const InsReg = () => {
           <div className="multi-btn">
             {" "}
             <button id="register-btn">Register Institute</button>{" "}
-            {isTransaction && (
+            {txHash && (
               <a
-                href={`https://explorer.xinfin.network/address/${account}`}
+                href={`https://xdcscan.com/tx/${txHash}`}
                 id="xdc-explorer"
                 target="_blank"
                 rel="noreferrer"

@@ -18,7 +18,7 @@ const PostCert = () => {
   const [values, setValues] = useState(regCertValue);
   const { connectingWithContract, account, loading, setLoading } = useContext(EdubukContexts);
   const [inputFile, setInputFile] = useState();
-  const [isTransaction, setTransaction] = useState(false);
+  const [txHash, setTxHash] = useState(null);
   const [uploadLoader, setUploadLoader] = useState(false);
   const [isNewRegistration, setNewRegistration] = useState(false);
   //upload docs to IPFS
@@ -89,19 +89,22 @@ const PostCert = () => {
     try {
       setLoading(true);
       const contract = await connectingWithContract();
-      const registerCert = await contract.postCertificate(
+      const tx = await contract.postCertificate(
         values.studentName,
-        values.studentAdd,
+        values.studentAdd?.trim(),
         uri,
         fileHash,
         values.certType,
         values.issuerName
       );
       setLoading(true);
-      await registerCert.wait();
-      setLoading(false);
-      toast.success("Certificated Posted successfully");
-      setTransaction(true)
+      await tx.wait();
+      if(tx?.hash)
+      {
+        setTxHash(tx?.hash);
+        setLoading(false);
+        toast.success("Certificated Posted successfully");
+      }
       setValues(regCertValue);
       setUri(null);
       setInputFile(null);
@@ -109,7 +112,7 @@ const PostCert = () => {
       setNewRegistration(true);
     } catch (error) {
       setLoading(false);
-      toast.error("Error in certificate Registration", error);
+      toast.error(error?.data?.message);
       console.error("Error in certificate Registration: ", error);
     }
   };
@@ -214,20 +217,17 @@ const PostCert = () => {
           <SmallLoader />
         ) : (
           <div className="multi-btn">
-            <button id="register-btn" onClick={regCert}>
-              {isNewRegistration ? "Register New Certificate" : "Register Certificate"}
-            </button>
-            {isTransaction && (
-              <div>
+            {" "}
+            <button id="register-btn" onClick={regCert}>{txHash?"Register New Certificate":"Register Certificate"}</button>{" "}
+            {txHash && (
               <a
-                href={`https://giant-half-dual-testnet.explorer.testnet.skalenodes.com/address/${account}`}
-                id="solana-explorer"
+                href={`https://xdcscan.com/tx/${txHash}`}
+                id="xdc-explorer"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
               >
                 View Transaction
               </a>
-              </div>
             )}
           </div>
         )}
