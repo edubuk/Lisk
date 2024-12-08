@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram,FaYoutube } from 'react-icons/fa'; 
+import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram,FaYoutube,FaTelegram } from 'react-icons/fa'; 
 import './footer.css'; 
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
@@ -51,6 +51,7 @@ const Footer = () => {
     </div>
     <div className='social-icon'>
       <h2>Follow us on :</h2>
+      <a href='https://t.me/edubukofficial' target='_blank' rel='noreferrer'><FaTelegram id='icon'/></a>
       <a href='https://www.facebook.com/edubuk.trst/' target='_blank' rel='noreferrer'><FaFacebook id='icon'/></a>
       <a href='https://www.instagram.com/edubuk_/' target='_blank' rel='noreferrer'><FaInstagram id='icon'/></a>
       <a href='https://www.linkedin.com/company/edubuk-ai-web3/' target='_blank' rel="noreferrer"><FaLinkedin id='icon'/></a>
