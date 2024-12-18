@@ -51,7 +51,7 @@ const [values, setValues] = useState({
       setLoading(true)
       const contract = await connectingWithContract();
       console.log("contract", contract);
-      const data = await contract.Viewcertificatedata(fileHash,{gasLimit: 8000000});
+      const data = await contract.viewCertificateData(fileHash,{gasLimit: 8000000});
       setLoading(true);
       console.log("verify data",data);
       setLoading(false);
