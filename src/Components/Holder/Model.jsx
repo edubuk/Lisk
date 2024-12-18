@@ -4,6 +4,7 @@ import SmallLoader from "../SmallLoader/SmallLoader";
 import { CiCircleRemove } from "react-icons/ci";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { nanoid } from "nanoid";
 import { EdubukContexts } from "../../Context/EdubukContext";
 const baseUrl= process.env.REACT_APP_BaseURL;
 
@@ -14,13 +15,6 @@ const Model = ({ setOpenModal, currUri, isShareBtn }) => {
   const [accessList, setAccessList] = useState([]);
   const {studentName,loading,setLoading} =useContext(EdubukContexts);
 
-  function generateUnique8DigitNumber() {
-    const min = 10000000;
-    const max = 99999999;
-    let randomNumber;
-    randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    return randomNumber;
-  }
 
   const sendEmail = async (
     e,
@@ -60,7 +54,7 @@ const Model = ({ setOpenModal, currUri, isShareBtn }) => {
     e.preventDefault();
     if(!receiverName || !receiverEmail)
     return toast.error("Please provide all inputs")
-    const userid = generateUnique8DigitNumber();
+    const userid = nanoid(12);
     try {
     
       setLoading(true)
@@ -91,7 +85,7 @@ const Model = ({ setOpenModal, currUri, isShareBtn }) => {
     e.preventDefault();
     try {
       setLoading(true)
-      const updatedUserId = generateUnique8DigitNumber();
+      const updatedUserId = nanoid(12);
       const url = `${baseUrl}/api/v1/removeAccess`;
       const res = await fetch(url, {
         method: "PUT",
