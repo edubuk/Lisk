@@ -3,6 +3,7 @@ import './about.css'
 import team1 from '../../assets/Team/team1.svg'
 import team2 from '../../assets/Team/team2.svg'
 import team3 from '../../assets/Team/team3.png'
+import team4 from '../../assets/Team/team4.JPG'
 import advisor1 from '../../assets/Advisor/advisor1.jpg'
 import advisor2 from '../../assets/Advisor/advisor2.jpg'
 import advisor3 from '../../assets/Advisor/advisor3.jpg'
@@ -43,6 +44,16 @@ const About = () => {
       linkedInLink:"https://www.linkedin.com/in/ajeet-ram-verma-953605244",
       teligramLink:"https://web.telegram.org/k/#@Ajeet_edubuk",
       mailId:"ajeet@edubukeseal.org"
+    },
+    {
+      id:4,
+      imgSrc:team4,
+      name:"Amit Srivastava",
+      tag: "Chief Marketing Officer(CMO)",
+      about:"Amit Srivastava is the Chief Marketing Officer at EduBuk, bringing over 20 years of diverse experience in driving business growth, marketing and innovation. A seasoned professional with a strong background in education, finance, insurance, banking, project management, and smart cities, Amit has worked with esteemed organizations such as MetLife, Sundaram, HDFC Bank, and Manipal Technologies. Holding an MBA in International Business and a Science graduate degree, Amit's expertise spans business procurement, strategy, and marketing.",
+      linkedInLink:"https://www.linkedin.com/in/amit-srivastava-62969352/",
+      teligramLink:"https://web.telegram.org/k/#@learnamitsrivastava",
+      mailId:"amit@edubukeseal.org"
     }
   ]
   const advisorData = [
