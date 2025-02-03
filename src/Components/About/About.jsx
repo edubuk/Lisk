@@ -34,7 +34,6 @@ const About = () => {
       teligramLink:"https://web.telegram.org/k/#@apoorvabajajcfa",
       mailId:"apoorva@edubukeseal.org"
     },
-
     {
       id:3,
       imgSrc:team3,
@@ -50,7 +49,7 @@ const About = () => {
       imgSrc:team4,
       name:"Amit Srivastava",
       tag: "Chief Marketing Officer(CMO)",
-      about:"Amit Srivastava is the Chief Marketing Officer at EduBuk, bringing over 20 years of diverse experience in driving business growth, marketing and innovation. A seasoned professional with a strong background in education, finance, insurance, banking, project management, and smart cities, Amit has worked with esteemed organizations such as MetLife, Sundaram, HDFC Bank, and Manipal Technologies. Holding an MBA in International Business and a Science graduate degree, Amit's expertise spans business procurement, strategy, and marketing.",
+      about:"20+ years of expertise in business growth, marketing, and innovation across education, finance, insurance, and banking. He has held key roles at MetLife, HDFC Bank, and Manipal Technologies. An MBA in International Business, he excels in strategy, procurement and marketing.",
       linkedInLink:"https://www.linkedin.com/in/amit-srivastava-62969352/",
       teligramLink:"https://web.telegram.org/k/#@learnamitsrivastava",
       mailId:"amit@edubukeseal.org"
