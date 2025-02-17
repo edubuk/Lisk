@@ -120,18 +120,19 @@
     color: #006666;
   }
 
-  .columns
+  .columns,.office-col
   {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     margin-top: 10px;
-    column-gap: 5px;
+    column-gap: 3px;
   }
 
-  .columns ul {
+  .columns ul,.office-col ul {
     list-style: none;
+    color: #006666;
   }
 
   .columns ul li>a
@@ -142,9 +143,18 @@
   .columns ul li::before
   {
     content: "→";
-    margin-right: 5px;
+    margin-right: 2px;
     color: #ff8000;
   }
+ 
+
+  .office-col ul li:not(:first-child)::before
+  {
+    content: "📍";
+    margin-right: 2px;
+    color: #ff8000;
+  }
+
   
   .social-icon
   {

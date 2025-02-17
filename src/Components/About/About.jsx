@@ -7,6 +7,7 @@ import team4 from '../../assets/Team/team4.JPG'
 import advisor1 from '../../assets/Advisor/advisor1.jpg'
 import advisor2 from '../../assets/Advisor/advisor2.jpg'
 import advisor3 from '../../assets/Advisor/advisor3.jpg'
+import advisor4 from '../../assets/Advisor/advisor4.jpeg'
 import { FaLinkedin, FaTelegram } from 'react-icons/fa6'
 import { MdOutlineMail } from "react-icons/md";
 import Footer from '../Footer/Footer'
@@ -77,6 +78,13 @@ const About = () => {
       name:"Dr. Sindhu Bhaskar",
       tag: "Co-Founder, EST Global,Forbes Council Member",
       linkedInLink:"https://www.linkedin.com/in/dr-sindhu-bhaskar-55a84568/",
+    },
+    {
+      id:4,
+      imgSrc:advisor4,
+      name:"James Wren",
+      tag: "Advisor: Blockchain & Web3",
+      linkedInLink:"https://www.linkedin.com/in/james-wren-15b8b759/",
     }
   ]
   return (
