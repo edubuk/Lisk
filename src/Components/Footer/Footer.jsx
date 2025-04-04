@@ -3,7 +3,7 @@ import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram,FaYoutube,FaTelegram } f
 import './footer.css'; 
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/edubuk-logo.png'
+import logo from '../../assets/newlogo.jpg'
 
 const Footer = () => {
   return (
