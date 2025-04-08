@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import  {Home, Admin, Institute,Holder,Verifier,Finder,About,CETA,MediaMention}  from "./Components/index";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
+import InvestmentPage from "./Components/Investment/Investment";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/ceta" element={<CETA />} />
+        <Route path="/investment" element={<InvestmentPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/media-mention" element={<MediaMention />} />
         <Route path="/issuer" element={<Institute />} />

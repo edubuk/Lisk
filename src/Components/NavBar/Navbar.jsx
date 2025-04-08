@@ -24,6 +24,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path:"/about"},
     { name:"CETA", path:"/ceta"},
+    { name:"Investment", path:"/investment"},
     { name: "Issuer", path: "/issuer" },
     { name: "Verifier", path: "/verifier" },
     { name:"Media",path:"/media-mention"},
@@ -66,7 +67,7 @@ const Navbar = () => {
       <div className='header-container'>
         <div className='nav-logo'>
           <img src={logo} alt='logo' />
-          {windowDimensions?.width >= 768 ? (
+          {windowDimensions?.width >= 900 ? (
             <nav>
               {navData.map((data, i) => (
                 <Link
