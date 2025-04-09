@@ -5,6 +5,8 @@ import  {Home, Admin, Institute,Holder,Verifier,Finder,About,CETA,MediaMention} 
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import InvestmentPage from "./Components/Investment/Investment";
+import TermsAndConditions from './Components/Legals/TermCond';
+import PrivacyPolicy from './Components/Legals/PrivacyPolicy';
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
         <Route path="/holder" element={<Holder />} />
         <Route path="/verifier" element={<Verifier />} />
         <Route path="/finder" element={<Finder/>} />
+        <Route path="/terms-conditions" element={<TermsAndConditions/>} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
       </Routes>
     </>
   );

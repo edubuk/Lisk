@@ -1,10 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGlobe, FaGraduationCap, FaVideo, FaMoneyBillWave, FaEthereum, FaEnvelope, FaTelegramPlane, FaWhatsapp, FaRocket } from 'react-icons/fa';
+import { FaGlobe, 
+  FaGraduationCap, 
+  FaVideo, FaMoneyBillWave, FaCoins, FaEnvelope, FaTelegramPlane, 
+  FaWhatsapp, FaRocket,FaFacebook, FaLinkedin, FaTwitter, FaInstagram,FaYoutube,FaTelegram } from 'react-icons/fa';
+
 import './InvestmentPage.css';
+import { Link } from 'react-router-dom';
+
 
 const InvestmentPage = () => {
   return (
+    <div className='investment-container'>
     <div className="investment-page">
       <motion.h1
         initial={{ y: -50, opacity: 0 }}
@@ -21,7 +28,7 @@ const InvestmentPage = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 1 }}
       >
-        Welcome to the official Investment Page of Edubuk — a globally awarded,
+        Welcome to the official Investment Page of Edubuk<br></br>a globally awarded,
         blockchain-powered platform revolutionizing academic and professional credentials verification
         and emerging technologies education.
         <br /><br />
@@ -61,18 +68,41 @@ const InvestmentPage = () => {
 
       <section className="section video-section">
         <h2><FaVideo /> Watch Edubuk in Action</h2>
-        <div className="video-container">
-          <iframe width="360" height="215" src="https://www.youtube.com/embed/5Cb6g7EEzAk?si=ILTH6o_E9nirqOr3&autoplay=1&mute=1" title="Video 1" frameBorder="0" allowFullScreen></iframe>
-          <iframe width="360" height="215" src="https://www.youtube.com/embed/CsrP58BXpTA?si=bfbQrsQAl51VJKPd&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
-          <iframe width="360" height="215" src="https://www.youtube.com/embed/fL4GB7rie54?si=lArzvbR6h4vLfQcg&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
-          <iframe width="360" height="215" src="https://www.youtube.com/embed/-EEe8-ogkwY?si=axYMLWozjH0ntv51&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
+        <div className="video-box">
+        <div className='video-container'>
+        <h2>Award</h2>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/5Cb6g7EEzAk?si=ILTH6o_E9nirqOr3&autoplay=1&mute=1" title="Video 1" frameBorder="0" allowFullScreen></iframe>
+          </div>
+          <div className='video-container'>
+          <h2>CETA</h2>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/CsrP58BXpTA?si=bfbQrsQAl51VJKPd&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
+          </div>
+          <div className='video-container'>
+          <h2>AI & Olympiad</h2>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/fL4GB7rie54?si=lArzvbR6h4vLfQcg&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
+          </div>
+          <div className='video-container'>
+          <h2>CV on Chain</h2>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/-EEe8-ogkwY?si=axYMLWozjH0ntv51&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
+          </div>
         </div>
       </section>
 
       <section className="section">
         <h2><FaMoneyBillWave /> Investment Options</h2>
         <div className="investment-option">
-          <h3>Option 1: Invest in Equity</h3>
+          <h3>Option 1: Invest in EBUK Tokens <FaCoins /></h3>
+          <ul>
+            <li>✅ For crypto investors and blockchain backers</li>
+            <li>🔗 Native token powering the Edubuk dApp ecosystem</li>
+            <li>💰 Min Investment: $2,000</li>
+            <li>💰 Max Investment: $50,000</li>
+            <li>📈 Tokenomics & whitepaper available post sign-up</li>
+          </ul>
+          <a href="https://ebukpresale.com" target='_blank' rel="noreferrer" className="cta-button">👉 Click here to Invest in Tokens (EBUK)</a>
+        </div>
+        <div className="investment-option">
+          <h3>Option 2: Invest in Equity</h3>
           <ul>
             <li>✅ For accredited investors or VCs</li>
             <li>💼 Back Edubuk as a startup in the EdTech x Blockchain space</li>
@@ -83,24 +113,8 @@ const InvestmentPage = () => {
           <a href="#" className="cta-button">👉 Click here to Invest in Equity</a>
         </div>
 
-        <div className="investment-option">
-          <h3>Option 2: Invest in EBUK Tokens <FaEthereum /></h3>
-          <ul>
-            <li>✅ For crypto investors and blockchain backers</li>
-            <li>🔗 Native token powering the Edubuk dApp ecosystem</li>
-            <li>💰 Min Investment: $2,000</li>
-            <li>💰 Max Investment: $50,000</li>
-            <li>📈 Tokenomics & whitepaper available post sign-up</li>
-          </ul>
-          <a href="https://ebukpresale.com" target='_blank' rel="noreferrer" className="cta-button">👉 Click here to Invest in Tokens (EBUK)</a>
-        </div>
-
         <p className="dual-option">
-          🔄 Want to invest in both?<br />
-          You’re welcome to register for both independently.
-          <br /><br />
-          👉 <a href="#">Equity Link: iCapital tenant website</a><br />
-          👉 <a href="https://ebukpresale.com">Token Link : https://ebukpresale.com</a>
+        If you want to invest in Edubuk's equity, you may email us at investment@edubukeseal.org
         </p>
       </section>
 
@@ -121,7 +135,26 @@ const InvestmentPage = () => {
       >
         <FaRocket /> Join the revolution.
         <p>Be part of a verified, borderless future of skills and credentials.</p>
+        <p><Link to="/terms-conditions" id='link'>Terms & Conditions</Link> | <Link to="/privacy-policy" id="link">Privacy Policy</Link></p>
       </motion.div>
+    </div>
+    <div className='columns'>
+        <div className='social-icon'>
+          <h2>Follow us on :</h2>
+          <a href='https://t.me/edubukofficial' target='_blank' rel='noreferrer'><FaTelegram id='icon'/></a>
+          <a href='https://www.facebook.com/edubuk.trst/' target='_blank' rel='noreferrer'><FaFacebook id='icon'/></a>
+          <a href='https://www.instagram.com/edubuk_/' target='_blank' rel='noreferrer'><FaInstagram id='icon'/></a>
+          <a href='https://www.linkedin.com/company/edubuk-ai-web3/' target='_blank' rel="noreferrer"><FaLinkedin id='icon'/></a>
+          <a href='https://x.com/edubuktrust' target='_blank' rel="noreferrer"><FaTwitter id='icon'/></a>
+          <a href='https://www.youtube.com/channel/UC4g4MH4F_JTbd1tqNS5pq1g/videos' target='_blank' rel="noreferrer"><FaYoutube id='icon'/></a>
+        </div>
+        {/* <div>
+          <h2>Our Office :</h2>
+          <h3>Hyderabad,Telangana</h3>
+          <h3>Lucknow, Uttar Pradesh</h3>
+          <h3>Dubai, UAE</h3>
+        </div> */}
+        </div>
     </div>
   );
 };
