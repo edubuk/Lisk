@@ -110,12 +110,15 @@ const InvestmentPage = () => {
             <li>💵 Max Investment: $150,000</li>
             <li>📄 Equity Terms, Deck & Docs shared upon registration</li>
           </ul>
-          <a href="#" className="cta-button">👉 Click here to Invest in Equity</a>
-        </div>
-
-        <p className="dual-option">
+          <p className="dual-option">
         If you want to invest in Edubuk's equity, you may email us at investment@edubukeseal.org
         </p>
+          {/* <a href="#" className="cta-button">👉 Click here to Invest in Equity</a> */}
+        </div>
+
+        {/* <p className="dual-option">
+        If you want to invest in Edubuk's equity, you may email us at investment@edubukeseal.org
+        </p> */}
       </section>
 
       <section className="section">
