@@ -1,17 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, {useState } from "react";
 import toast from "react-hot-toast";
 import Img from '../../assets/img1.gif'
 import './verifier.css'
 import CryptoJS from "crypto-js";
-import { EdubukContexts } from "../../Context/EdubukContext";
 import HexToDateTime from "./HexToTime";
 import SmallLoader from "../SmallLoader/SmallLoader";
-
-
+import { EdubukConAdd } from "../../Context/constant";
+import { ethers } from "ethers";
 const Verifier = () => {
   const [fileHash, setFileHash] = useState(null);
   const [loader, setLoading] = useState(false);
-  const {connectingWithContract } = useContext(EdubukContexts);
   const [inputFile, setInputFile] = useState();
   
 const [values, setValues] = useState({
@@ -41,6 +39,57 @@ const [values, setValues] = useState({
   }
 
   // upload data on blockchain
+  const EdubukConABI = [
+    {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_hash",
+                    "type": "string"
+                }
+            ],
+            "name": "viewCertificateData",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+  ];
 
   const verifyCert = async (e) => {
     e.preventDefault();
@@ -49,9 +98,13 @@ const [values, setValues] = useState({
       return toast.error("No File choosen");
     try {
       setLoading(true)
-      const contract = await connectingWithContract();
+      const RPC_URL = "https://erpc.xinfin.network";
+      //const EdubukConAdd = "0xfcF386Fb19631248177c90A0e09060E0A2d6157a";
+      const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
+      const contract = new ethers.Contract(EdubukConAdd, EdubukConABI, provider);
+      //const contract = await connectingWithContract();
       console.log("contract", contract);
-      const data = await contract.viewCertificateData(fileHash,{gasLimit: 8000000});
+      const data = await contract.viewCertificateData(fileHash);
       setLoading(true);
       console.log("verify data",data);
       setLoading(false);
