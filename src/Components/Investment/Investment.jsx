@@ -71,19 +71,19 @@ const InvestmentPage = () => {
         <div className="video-box">
         <div className='video-container'>
         <h2>Award</h2>
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/5Cb6g7EEzAk?si=ILTH6o_E9nirqOr3&autoplay=1&mute=1" title="Video 1" frameBorder="0" allowFullScreen></iframe>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/5Cb6g7EEzAk?si=ILTH6o_E9nirqOr3&autoplay=1&mute=1" title="Video 1" allowFullScreen></iframe>
           </div>
           <div className='video-container'>
           <h2>CETA</h2>
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/CsrP58BXpTA?si=bfbQrsQAl51VJKPd&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/-6fKOysTNo4?si=Nhjgt0ESGkVPvgTU&autoplay=1&mute=1" title="Video 2"  allowFullScreen></iframe>
           </div>
           <div className='video-container'>
           <h2>AI & Olympiad</h2>
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/fL4GB7rie54?si=lArzvbR6h4vLfQcg&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/kORadYQBGLY?si=qeQRqdBW7lBwawN8&autoplay=1&mute=1" title="Video 2"  allowFullScreen></iframe>
           </div>
           <div className='video-container'>
           <h2>CV on Chain</h2>
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/-EEe8-ogkwY?si=axYMLWozjH0ntv51&autoplay=1&mute=1" title="Video 2" frameBorder="0" allowFullScreen></iframe>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/vVYQXffnI-8?autoplay=1&mute=1" title="Video 2" allowFullScreen></iframe>
           </div>
         </div>
       </section>

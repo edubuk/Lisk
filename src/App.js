@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import InvestmentPage from "./Components/Investment/Investment";
 import TermsAndConditions from './Components/Legals/TermCond';
 import PrivacyPolicy from './Components/Legals/PrivacyPolicy';
+import AppPolicy from "./Components/Legals/AppPolicy";
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/finder" element={<Finder/>} />
         <Route path="/terms-conditions" element={<TermsAndConditions/>} />
         <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+        <Route path="/app-policy" element={<AppPolicy/>} />
       </Routes>
     </>
   );

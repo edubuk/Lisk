@@ -74,8 +74,8 @@ const TermsAndConditions = () => {
       </p>
       
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:support@edubuk.com" id='status-link'>support@edubuk.com</a></p>
-      <p>Website: <a href="https://www.edubukeseal.com" target="_blank" rel="noopener noreferrer" id='status-link'>https://www.edubukeseal.com</a></p>
+      <p>Email: <a href="mailto:support@edubukeseal.org" id='status-link'>support@edubukeseal.org</a></p>
+      <p>Website: <a href="https://www.edubukeseal.org" target="_blank" rel="noopener noreferrer" id='status-link'>https://www.edubukeseal.org</a></p>
     </div>
   );
 };
