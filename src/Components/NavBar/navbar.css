@@ -19,9 +19,8 @@
 
 .nav-logo>img
 {
-    width: 80px;
-    height: 95px;
-    mix-blend-mode: multiply;
+    width:fit-content;
+    height: 100px;
     z-index: 1;
     
 }
@@ -125,6 +124,11 @@ nav a:hover::after
     font-weight: bold;
 }
 
+.esealLogo{
+    width:fit-content;
+    height:150px;
+}
+
 
 @media screen and (min-width: 768px) and (max-width:1075px)  {
  
@@ -158,9 +162,8 @@ nav a:hover::after
 
     .nav-logo>img
    {
-    width: 60px;
-    height: 75px;
-    mix-blend-mode: multiply;
+    width:fit-content;
+    height: 90px;
     z-index: 1;
     }
 

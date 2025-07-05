@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { EdubukContexts } from '../../Context/EdubukContext';
 import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import './navbar.css';
@@ -6,6 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose,MdOutlineCheckCircle } from "react-icons/md";
 import Sidebar from '../Sidebar/Sidebar';
 import logo from '../../assets/newlogo.jpg';
+import esealLogo from '../../assets/eseal.png';
 import WalletInfo from '../WalletInfo/WalletInfo';
 import { connectWallet } from '../../Utils/apiFeature';
 
@@ -85,6 +86,7 @@ const Navbar = () => {
           ) : (
             <MdClose className='menu-btn' onClick={() => setOpenSidebar(false)} />
           )}
+          <img src={esealLogo} alt='logo' className='esealLogo'/>
         </div>
         {!account&&
         <button id="connect-btn" onClick={walletConnectHandler}>Connect Wallet</button>
