@@ -53,7 +53,7 @@ const Footer = () => {
       <li><strong>Our Offices : </strong></li>
       <li>Hyderabad, India</li>
       <li>Lucknow, India</li>
-      <li>Dubai, UAE</li>
+      <li>Dubai and RAK, UAE</li>
     </ul>
     </div>
     </div>

@@ -98,7 +98,7 @@ const [values, setValues] = useState({
       return toast.error("No File choosen");
     try {
       setLoading(true)
-      const RPC_URL = "https://erpc.xinfin.network";
+      const RPC_URL = "https://rpc.sepolia-api.lisk.com";
       //const EdubukConAdd = "0xfcF386Fb19631248177c90A0e09060E0A2d6157a";
       const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
       const contract = new ethers.Contract(EdubukConAdd, EdubukConABI, provider);

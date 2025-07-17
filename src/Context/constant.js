@@ -1,5 +1,5 @@
-//import ABI from './edubuksc.json'
-import ABI from './updatedEdubukXDC.json'
+import ABI from './edubuksc.json'
+
 //XDC test network by aproova sir
 //XDC mainnet
 export const EdubukConAdd = process.env.REACT_APP_UpdatedContract;
