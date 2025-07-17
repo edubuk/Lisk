@@ -221,7 +221,7 @@ const PostCert = () => {
             <button id="register-btn" onClick={regCert}>{txHash?"Register New Certificate":"Register Certificate"}</button>{" "}
             {txHash && (
               <a
-                href={`https://xdcscan.com/tx/${txHash}`}
+                href={`https://sepolia-blockscout.lisk.com/tx/${txHash}`}
                 id="xdc-explorer"
                 target="_blank"
                 rel="noreferrer"

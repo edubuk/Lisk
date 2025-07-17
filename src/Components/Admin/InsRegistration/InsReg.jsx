@@ -97,7 +97,7 @@ const InsReg = () => {
             <button id="register-btn">Register Institute</button>{" "}
             {txHash && (
               <a
-                href={`https://xdcscan.com/tx/${txHash}`}
+                href={`https://sepolia-blockscout.lisk.com/tx/${txHash}`}
                 id="xdc-explorer"
                 target="_blank"
                 rel="noreferrer"

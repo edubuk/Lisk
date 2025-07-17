@@ -47,7 +47,7 @@ const AddWitness = () => {
             <button id="register-btn">Add Witness</button>{" "}
             {isTransaction && (
               <a
-                href={`https://explorer.xinfin.network/address/${account}`}
+                href={`https://sepolia-blockscout.lisk.com/address/${account}`}
                 id="xdc-explorer"
                 target="_blank"
                 rel="noreferrer"

@@ -71,7 +71,7 @@ const InvestmentPage = () => {
         <div className="video-box">
         <div className='video-container'>
         <h2>Award</h2>
-          <iframe width="300" height="250" src="https://www.youtube.com/embed/5Cb6g7EEzAk?si=ILTH6o_E9nirqOr3&autoplay=1&mute=1" title="Video 1" allowFullScreen></iframe>
+          <iframe width="300" height="250" src="https://www.youtube.com/embed/42ujKTOMRf8?si=B8GIs3yFB9gyPinB&autoplay=1&mute=1" title="Video 1" allowFullScreen></iframe>
           </div>
           <div className='video-container'>
           <h2>CETA</h2>
